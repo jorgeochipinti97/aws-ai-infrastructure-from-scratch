@@ -1,0 +1,16 @@
+node_modules/
+package-lock.json
+.env
+
+# Temporary/test files
+archivo.txt
+descargado.txt
+prompt.json
+response.json
+output.json
+test-event.json
+function.zip
+trust-policy.json
+
+# Claude
+.claude/

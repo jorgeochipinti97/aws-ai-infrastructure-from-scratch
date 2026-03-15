@@ -1,0 +1,25 @@
+{
+  "name": "aws-ai-infrastructure",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "embedding:test": "node embedding-test.mjs",
+    "similarity:test": "node similarity-test.mjs",
+    "rag:casero": "node rag-casero.mjs",
+    "rag:index": "node index-documents.mjs",
+    "rag:setup-db": "node setup-pgvector.mjs",
+    "rag:profesional": "node rag-profesional.mjs",
+    "bedrock:test": "node bedrock-test.mjs",
+    "bedrock:compare": "node compare-models.mjs",
+    "s3:test": "node s3-test.mjs"
+  },
+  "keywords": ["aws", "bedrock", "rag", "pgvector", "lambda", "ai", "infrastructure"],
+  "author": "",
+  "license": "MIT",
+  "description": "Hands-on AWS AI infrastructure: Bedrock, Lambda, S3, API Gateway, and RAG with pgvector",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1009.0",
+    "@aws-sdk/client-s3": "^3.1009.0",
+    "pg": "^8.20.0"
+  }
+}
