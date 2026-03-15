@@ -14,3 +14,7 @@ trust-policy.json
 
 # Claude
 .claude/
+
+# Personal notes
+session.md
+social-media.md
