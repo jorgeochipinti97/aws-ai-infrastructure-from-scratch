@@ -4,6 +4,23 @@ End-to-end AWS infrastructure for AI applications, built entirely from the CLI. 
 
 This is not a tutorial that stops at "hello world". It goes from zero to a working AI API with vector search — the same architecture used in production systems.
 
+## Use Case
+
+You're building a customer support assistant for your SaaS product. Users ask questions in natural language, and the system needs to answer based on your internal documentation — not generic LLM knowledge.
+
+**The problem:** LLMs don't know about your product. They hallucinate.
+
+**The solution (what this repo builds):**
+
+1. Your product docs live in S3
+2. Each document is converted into a vector embedding (Titan Embeddings) and stored in PostgreSQL with pgvector
+3. When a user asks a question, the system converts the question into a vector, finds the most relevant documents using HNSW index similarity search, and passes them as context to the LLM
+4. The LLM answers using only your documentation — no hallucination
+
+This pattern (RAG) is used by most AI assistants in production today: internal knowledge bases, documentation chatbots, support automation, legal document search, medical record retrieval.
+
+**This repo gives you the infrastructure layer.** Swap the sample documents for your own data and you have a working system.
+
 ## What's Inside
 
 | Module | What You Build | AWS Services |
@@ -141,6 +158,23 @@ MIT
 Infraestructura AWS completa para aplicaciones de IA, construida enteramente desde la CLI. Cubre S3, Lambda, API Gateway, Amazon Bedrock (LLMs + Embeddings) y un pipeline RAG de producción usando PostgreSQL con pgvector.
 
 No es un tutorial que se queda en "hello world". Va de cero a una API de IA funcional con búsqueda vectorial — la misma arquitectura que se usa en sistemas de producción.
+
+## Caso de Uso
+
+Estás construyendo un asistente de soporte para tu producto SaaS. Los usuarios hacen preguntas en lenguaje natural y el sistema necesita responder basándose en tu documentación interna — no en conocimiento genérico del LLM.
+
+**El problema:** Los LLMs no saben nada de tu producto. Alucinan.
+
+**La solución (lo que construye este repo):**
+
+1. Tus documentos viven en S3
+2. Cada documento se convierte en un vector embedding (Titan Embeddings) y se guarda en PostgreSQL con pgvector
+3. Cuando un usuario hace una pregunta, el sistema convierte la pregunta en un vector, encuentra los documentos más relevantes usando búsqueda por similitud con índice HNSW, y se los pasa como contexto al LLM
+4. El LLM responde usando solo tu documentación — sin alucinaciones
+
+Este patrón (RAG) es el que usan la mayoría de asistentes de IA en producción hoy: bases de conocimiento internas, chatbots de documentación, automatización de soporte, búsqueda en documentos legales, consulta de historias clínicas.
+
+**Este repo te da la capa de infraestructura.** Reemplazá los documentos de ejemplo por tus propios datos y tenés un sistema funcionando.
 
 ## Qué Incluye
 
